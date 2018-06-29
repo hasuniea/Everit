@@ -43,11 +43,12 @@
             <groupId>org.everit.json</groupId>
             <artifactId>org.everit.json.schema</artifactId>
             <version>${everit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>${json.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.json</groupId>
+                    <artifactId>json</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>commons-validator</groupId>
@@ -76,7 +77,6 @@
                             com.google.common.collect;version="[19.0,20)";resolution:=optional,
                             com.google.common.net;resolution:=optional;version="[19.0,20)",
                             org.apache.commons.validator.routines;resolution:=optional;version="[1.5,2)",
-                            org.json;resolution:=optional;version="[20160810.0,20160811)"
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
@@ -87,7 +87,6 @@
 
     <properties>
         <everit.version>1.5.0</everit.version>
-        <json.version>20160810</json.version>
         <validator.version>1.5.1</validator.version>
     </properties>
 
